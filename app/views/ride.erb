@@ -1,6 +1,8 @@
 <h1>Ride id: <%= @ride.id %></h1>
 From: <%= @ride.origin %><br>
 To: <%= @ride.destination %><br>
+Driver: <%= @ride.driver.name %><br>
+Driver Username: <%= @ride.driver.username %><br>
 Seat Openings: <%= @ride.seat_openings %><br>
 Time Taking Off: <%= @ride.start_time.strftime("%h %d %Y at %I:00 %P") %><br>
 Price: $<%= "#{@ride.price.to_s[0..-3]}.#{@ride.price.to_s[-2..-1]}" %><br>
