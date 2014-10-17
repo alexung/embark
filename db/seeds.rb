@@ -166,7 +166,7 @@ end
   ride_hash = {
                  origin: two_cities[1],
                  destination: two_cities[0],
-                 driver_id: 1+rand(40),
+                 driver_id: 1+rand(25),
                  seat_openings: 1+rand(4),
                  price: 1000+rand(9000),
                  start_time: DateTime.new(2014,11+rand(2),1+rand(30),rand(24))
