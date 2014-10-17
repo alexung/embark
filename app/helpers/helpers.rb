@@ -7,7 +7,7 @@ helpers do
     requests = []
     User.find(driver_id).driver_rides.each do |trip|
       trip.requests.each do |request|
-        requests.push(request)
+        requests.push([trip, request, User.find(request.requestor)])
       end
     end
     requests

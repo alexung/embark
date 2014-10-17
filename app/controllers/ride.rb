@@ -27,14 +27,17 @@ post '/ride/success' do
   redirect '/ride/success'
 end
 
+get '/message/:id' do
+  @request = Request.find(params[:id])
+  erb :individual_message
+end
+
 get '/ride/:id' do
   @ride = Ride.find(params[:id])
   erb :ride
 end
 
-get '/request/:id' do
-  erb :individual_message
-end
+
 
 
 
