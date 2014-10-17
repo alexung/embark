@@ -1,1 +1,7 @@
 <h1> Message </h1>
+
+<% @all_requests.each do |request| %>
+  <a href="/request/<%=request.id%>">
+    <p><%= request.description %></p>
+  </a>
+<% end %>
