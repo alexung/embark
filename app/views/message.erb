@@ -1,7 +1,7 @@
 <h1> Message </h1>
 
 <% @all_requests.each do |request| %>
-  <a href="/request/<%=request.id%>">
-    <p><%= request.description %></p>
+  <a href="/message/<%=request[1].id%>">
+    <p><%= request[2].name %> has sent you a request for your ride from <%= request[0].origin%> to <%= request[0].destination%> on <%= request[0].start_time%></p>
   </a>
 <% end %>

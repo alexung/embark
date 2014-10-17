@@ -16,14 +16,12 @@
 # #As a driver, I want to be able to see all users that have requested to be a part of a particular ride I created
 
 # As a driver, I want to be able to view all requests, for all trips, that have been sent to
-@all_requests = []
-User.find(1).driver_rides.each do |trip|
-  trip.requests.each do |request|
-    @all_requests.push(request)
-  end
-end
-
-.requestors
+# @all_requests = []
+# User.find(1).driver_rides.each do |trip|
+#   trip.requests.each do |request|
+#     @all_requests.push(request)
+#   end
+# end
 
 # #As a driver, I want to be able to see all of the rides I have created
 # driver.driver_rides
@@ -158,16 +156,17 @@ users=[]
 rides = []
 passenger_rides = []
 requests = []
-
-25.times do
+User.create(name: 'tester', username: 'test', password: 'password')
+24.times do
   fn = Faker::Name.first_name
   ln = Faker::Name.last_name
   n = fn+" "+ln
   ln = (fn[0]+ln).downcase
-  user_hash = {name: n,username:ln,password_digest:ln}
+  user_hash = {name: n,username:ln,password:ln}
   # users.push(user_hash)
   User.create(user_hash)
 end
+
 
 
 25.times {
