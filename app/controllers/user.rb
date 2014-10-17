@@ -1,16 +1,25 @@
+enable :sessions
+
 get '/session' do
   erb :'users/login'
 end
 
 post '/session' do
-  user = User.authenticate(params[:username], params[:password])
+  user = User.find_by(username: params[:username])
 
-  if user == nil || user == false
-    session[:error] = "Login failed"
+ if user.nil?
+   session[:error] = "Login failed"
     redirect "/session"
-  else
+  end
+
+  user = user.authenticate(params[:password]) #the real deal. when false, it returns false. When true, returns user object
+
+  if user
     session[:user_id] = user.id
     redirect "/ride"
+  else
+    session[:error] = "Login failed"
+    redirect "/session"
   end
 
 end
@@ -30,7 +39,7 @@ post '/user' do
 
 end
 
-
 get '/logout' do
+  session.clear
   redirect '/'
 end
