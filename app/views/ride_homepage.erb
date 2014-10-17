@@ -1,1 +1,11 @@
-Ride homepage - should be displaying rides
+<p>Ride homepage - should be displaying rides</p>
+
+<% @rides.each do |ride| %><br>
+From: <%= ride.origin %> <br>
+To: <%= ride.destination %> <br>
+Seat Openings: <%= ride.seat_openings %><br>
+Price: $<%= ride.price %>
+<% end %>
+
+
+
