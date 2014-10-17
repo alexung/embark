@@ -1,8 +1,9 @@
 class CreateRequests < ActiveRecord::Migration
   def change
     create_table :requests do |t|
-      t.references :user
-      t.references :ride
+      t.belongs_to :ride
+      t.belongs_to :requestor
+      t.text :description
 
       t.timestamps
     end
