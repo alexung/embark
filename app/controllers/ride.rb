@@ -23,5 +23,9 @@ get '/ride/:id' do
   erb :ride
 end
 
+get '/ride/success' do
+  erb :ride_requested
+end
+
 
 
