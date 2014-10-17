@@ -17,15 +17,24 @@ post '/ride/new' do
   redirect '/ride'
 end
 
-get '/ride/:id' do
-  @ride = Ride.find(params[:id])
-
-  erb :ride
-end
-
 get '/ride/success' do
   erb :ride_requested
 end
+
+post '/ride/success' do
+  puts "*"*30
+  Request.create(requestor_id: session[:user_id], requested_ride_id: params[:id], description: params[:description])
+  redirect '/ride/success'
+end
+
+get '/ride/:id' do
+  @ride = Ride.find(params[:id])
+  erb :ride
+end
+
+
+
+
 
 
 
