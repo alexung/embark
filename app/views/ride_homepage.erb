@@ -5,7 +5,7 @@
     From: <%= ride.origin %><br>
     To: <%= ride.destination %><br>
     Seat Openings: <%= ride.seat_openings %><br>
-    Price: $<%= ride.price %><br><br>
+    Price: $<%= "#{ride.price.to_s[0..-3]}.#{ride.price.to_s[-2..-1]}" %><br><br>
   </a>
 <% end %>
 

@@ -1,47 +1,47 @@
-#As a user, I want to be able to signup
-User.create(name: 'Joe', username: 'e710476', password: 'password')
-User.create(name: 'requestor', username: 'rq3', password: 'password')
-driver = User.first
-rq = User.second
+# #As a user, I want to be able to signup
+# User.create(name: 'Joe', username: 'e710476', password: 'password')
+# User.create(name: 'requestor', username: 'rq3', password: 'password')
+# driver = User.first
+# rq = User.second
 
-#As a driver, I want to be able to create a ride
-Ride.create(driver: driver, origin: 'Los Angeles', destination:'Tokyo', seat_openings: 1, price: 25.00)
+# #As a driver, I want to be able to create a ride
+# Ride.create(driver: driver, origin: 'Los Angeles', destination:'Tokyo', seat_openings: 1, price: 25.00)
 
-#As a driver, I want to be able to update a ride
-driver.driver_rides.first.update(origin: 'San Diego')
+# #As a driver, I want to be able to update a ride
+# driver.driver_rides.first.update(origin: 'San Diego')
 
-#As a driver, I want to be able to see all the accepted passengers for a particular ride I created
-driver.driver_rides.first.passengers
+# #As a driver, I want to be able to see all the accepted passengers for a particular ride I created
+# driver.driver_rides.first.passengers
 
-#As a driver, I want to be able to see all users that have requested to be a part of a particular ride I created
-driver.driver_rides.first.requestors
+# #As a driver, I want to be able to see all users that have requested to be a part of a particular ride I created
+# driver.driver_rides.first.requestors
 
-#As a driver, I want to be able to see all of the rides I have created
-driver.driver_rides
+# #As a driver, I want to be able to see all of the rides I have created
+# driver.driver_rides
 
-#As a driver, I want to be able to accept a requestor to become a passenger of one of my rides
-PassengerRide.create(accepted_ride: Ride.first, passenger: rq)
-
-
-#As a passenger, I want to be able to be able to view all of the rides I have been accepted to
-rq.accepted_rides
+# #As a driver, I want to be able to accept a requestor to become a passenger of one of my rides
+# PassengerRide.create(accepted_ride: Ride.first, passenger: rq)
 
 
-#As a requestor, I want to be able to make a request
-Request.create(requested_ride: Ride.first, requestor: rq, description: 'im not a weirdo')
-
-#As a requestor, I want to be able to be able to view all of the requests I have sent
-rq.requests
-
-#As a requestor, I want to be able to view all of the rides I have sent requests to
-rq.requested_rides
+# #As a passenger, I want to be able to be able to view all of the rides I have been accepted to
+# rq.accepted_rides
 
 
-#As a user, I want to be able to view all of the rides for a particular city
-Ride.where(origin: 'San Diego')
+# #As a requestor, I want to be able to make a request
+# Request.create(requested_ride: Ride.first, requestor: rq, description: 'im not a weirdo')
+
+# #As a requestor, I want to be able to be able to view all of the requests I have sent
+# rq.requests
+
+# #As a requestor, I want to be able to view all of the rides I have sent requests to
+# rq.requested_rides
+
+
+# #As a user, I want to be able to view all of the rides for a particular city
+# Ride.where(origin: 'San Diego')
 
 # ------ Zack's work below ---------
-require 'faker'
+#require 'faker'
 
 
 cities =
@@ -156,8 +156,8 @@ requests = []
   n = fn+" "+ln
   ln = (fn[0]+ln).downcase
   user_hash = {name: n,username:ln,password_digest:ln}
-  users.push(user_hash)
-  # User.create(user_hash)
+  # users.push(user_hash)
+  User.create(user_hash)
 end
 
 
@@ -171,20 +171,20 @@ end
                  price: 1000+rand(9000),
                  start_time: DateTime.new(2014,11+rand(2),1+rand(30),rand(24))
                  }
-  # Ride.create(request_hash)
-  rides.push(ride_hash)
+  Ride.create(ride_hash)
+  # rides.push(ride_hash)
 }
 
 25.times {
-  passenger_ride_hash = {passenger_id: 1+rand(25),ride_id: 1+rand(25)}
-  # Passenger_ride.create(request_hash)
-  passenger_rides.push(passenger_ride_hash)
+  passenger_ride_hash = {passenger_id: 1+rand(25),accepted_ride_id: 1+rand(25)}
+  PassengerRide.create(passenger_ride_hash)
+  # passenger_rides.push(passenger_ride_hash)
 }
 
 25.times {
-  request_hash = {user_id: 1+rand(25),ride_id: 1+rand(25),description: ["Not a weirdo!","Need a lift, bro"].sample}
-  # Request.create(request_hash)
-  requests.push(request_ride_hash)
+  request_hash = {requestor_id: 1+rand(25),requested_ride_id: 1+rand(25),description: ["Not a weirdo!","Need a lift, bro"].sample}
+  Request.create(request_hash)
+  # requests.push(request_ride_hash)
 }
 
 # p users
