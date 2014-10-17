@@ -14,7 +14,16 @@
 # driver.driver_rides.first.passengers
 
 # #As a driver, I want to be able to see all users that have requested to be a part of a particular ride I created
-# driver.driver_rides.first.requestors
+
+# As a driver, I want to be able to view all requests, for all trips, that have been sent to
+@all_requests = []
+User.find(1).driver_rides.each do |trip|
+  trip.requests.each do |request|
+    @all_requests.push(request)
+  end
+end
+
+.requestors
 
 # #As a driver, I want to be able to see all of the rides I have created
 # driver.driver_rides
