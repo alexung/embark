@@ -1,3 +1,7 @@
+get "/ride" do
+  erb :ride_homepage
+end
+
 get '/message' do
   erb :message
 end
