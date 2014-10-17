@@ -6,6 +6,16 @@ Driver Username: <%= @ride.driver.username %><br>
 Seat Openings: <%= @ride.seat_openings %><br>
 Time Taking Off: <%= @ride.start_time.strftime("%h %d %Y at %I:00 %P") %><br>
 Price: $<%= "#{@ride.price.to_s[0..-3]}.#{@ride.price.to_s[-2..-1]}" %><br>
+
+<div style="width: 100%; overflow: hidden; height: 300px;">
+<iframe
+  width="100%"
+  height="250"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDoECvxb0ZAcfNayHzYPSuJqHc31RNqg7M&origin=<%=mapify(@ride.origin)%>&destination=<%=mapify(@ride.destination)%>&avoid=tolls|highways">
+</iframe>
+</div>
+
 <form action='/ride/success' method='POST'>
   <input type="hidden" name="id" value="<%=@ride.id%>">
   <textarea name="description" placeholder="Enter Description Here"></textarea><br>
