@@ -17,4 +17,11 @@ post '/ride/new' do
   redirect '/ride'
 end
 
+get '/ride/:id' do
+  @ride = Ride.find(params[:id])
+
+  erb :ride
+end
+
+
 
