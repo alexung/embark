@@ -5,7 +5,8 @@ class CreateRides < ActiveRecord::Migration
       t.string :origin
       t.string :destination #is this string if we're using googlemaps API
       t.integer :seat_openings
-      t.float :price
+      t.integer :price
+      t.datetime :start_time
 
       t.timestamps
     end
