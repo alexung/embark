@@ -18,6 +18,8 @@ gem 'rake'
 gem 'shotgun'
 gem 'bcrypt'
 
+gem 'google-api-client'
+
 group :test do
   gem 'faker'
   gem 'rspec'
