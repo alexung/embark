@@ -4,9 +4,9 @@ get "/ride" do
 end
 
 get '/message' do
-  binding.pry
+
   @all_requests = get_requests_for_driver(session[:user_id])
-  binding.pry
+
   erb :message
 end
 

@@ -6,10 +6,10 @@
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
+  <link rel="stylesheet" href="/css/application.css">
+
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
@@ -17,21 +17,8 @@
   <title>Embark</title>
 </head>
 <body>
-  <header>
-    <% if session[:user_id] %>
-    Hello, <%= User.find(session[:user_id]).name %>
-     <a href="/ride">Home</a>
-     <a href="/ride/new">Post a ride</a>
-     <a href="/message">Messages</a>
-     <a href="/logout">Logout</a>
-    <% else %>
-      <a href="/">Home</a>
-      <a href="/session">Login</a>
-      <a href="/user">Create User</a>
-    <% end %>
-  </header>
+  <%= erb :_nav  %>
 
   <%= yield %>
 </body>
-  <link rel="stylesheet" href="/css/application.css">
 </html>
