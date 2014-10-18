@@ -34,13 +34,9 @@ get '/ride/:id' do
 end
 
 get '/message/:id' do
-  # binding.pry
   @requested_route = Request.find(params[:id].to_i)
-  # binding.pry
-  p "*"*30
-  p params[:id].to_i #=> 6
-  p "*"*30
-  # @user = User.find(session[:user_id])
+  @requested_info = individual_request_for_driver(session[:user_id], Request.find(params[:id]).requested_ride)
+  @requestor = User.find(Request.find(params[:id])).name
   erb :individual_message
 end
 

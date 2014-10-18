@@ -1,9 +1,14 @@
 <h1> Individual Message </h1>
 
- Requested Ride ID: <%= @requested_route.requested_ride_id %><br>
- Request ID: <%= @requested_route.id %><br>
- Requestor ID: <%= @requested_route.requestor_id %><br>
- Description: <%= @requested_route.description %>
+<p> <%= @requestor %> would like to request a ride from <%= @requested_info.origin %> to <%= @requested_info.destination %> on <%= @requested_info.start_time %>.  You currently have <%= @requested_info.seat_openings %> seats open. </p>
+
+<!-- Can include price? They're willing to pay $<%#= "#{@requested_info.price.to_s[0..-3]}.#{@requested_info.price.to_s[-2..-1]}" %>. -->
+
+</p>
+  <strong><%=@requestor%>'s message:</strong><br>
+  <%= @requested_route.description %>
+</p>
+
 
  <form action="/message/<%=@requested_route.id %>" method="post">
   <input type="submit" value="Accept" name="accept">
