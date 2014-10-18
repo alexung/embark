@@ -1,7 +1,22 @@
-<h1> Message </h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10">
+    <h1> Message </h1>
 
-<% @all_requests.each do |request| %>
-  <a href="/message/<%=request[1].id%>">
-    <p><%= request[2].name %> has sent you a request for your ride from <%= request[0].origin%> to <%= request[0].destination%> on <%= request[0].start_time.strftime("%h %d %Y at %I:00 %P") %></p>
-  </a>
-<% end %>
+    <ul class="list-group message-item">
+      <% @all_requests.each do |request| %>
+      <a href="/message/<%=request[1].id%>">
+        <li class="list-group-item">
+          <%= request[2].name %> has sent you a request for your ride from <%= request[0].origin%> to <%= request[0].destination%> on <%= request[0].start_time.strftime("%h %d %Y at %I:00 %P") %>
+          <span class="badge pull-right"><%=request[0].seat_openings%> seats left</span>
+        </li>
+      </a>
+      <% end %>
+    </ul>
+  </div>
+</div>
+</div>
+
+
+
+

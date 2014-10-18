@@ -1,9 +1,30 @@
-<h1> Post a Ride </h1>
-<form action="/ride/new" method="post">
-  <input type="text" name="ride[origin]" placeholder="From"><br>
-  <input type="text" name="ride[destination]" placeholder="To"><br>
-  <input type="text" name="ride[seat_openings]" placeholder="Available Seats"><br>
-  <input type="text" name="ride[price]" placeholder="Price"><br>
-  <input type="text" name="ride[start_time]" placeholder="Start Time"><br>
-  <input type="submit" value="Submit"><br>
-</form>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-xs-9">
+      <h1> Post a Ride </h1>
+      <form role="form" action="/ride/new" method="post">
+        <div class="form-group">
+          <label>Origin</label>
+          <input type="text" class="form-control" name="ride[origin]" placeholder="From where">
+        </div>
+        <div class="form-group">
+          <label>Destination</label>
+          <input type="text" class="form-control" name="ride[destination]" placeholder="To where">
+        </div>
+        <div class="form-group">
+          <label>Available Seats</label>
+          <input type="number" class="form-control" name="ride[seat_openings]" placeholder="No. of seats">
+        </div>
+        <div class="form-group">
+          <label>Price</label>
+          <input type="number" class="form-control" name="ride[price]" placeholder="Price per seat">
+        </div>
+        <div class="form-group">
+          <label>Departure Date</label>
+          <input id="datepicker" type="text" class="form-control" name="ride[start_time]" placeholder="Start Time">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
