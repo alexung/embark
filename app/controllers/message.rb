@@ -4,7 +4,6 @@ get '/message' do
 end
 
 get '/message/:id' do
-  #thinks it's pulling in user ID, but it SHOULD be pulling in message id
   @requested_route = Request.find(params[:id].to_i)
   @requested_info = individual_request_for_driver(session[:user_id], Request.find(params[:id]).requested_ride)
   @requestor = User.find(Request.find(params[:id]).requestor_id).name
@@ -12,7 +11,6 @@ get '/message/:id' do
 end
 
 post '/message/:id' do
-  #thinks it's pulling in user ID, but it SHOULD be pulling in message id
   passenger_request = Request.find(params[:id])
   requestor = passenger_request.requestor
   if params[:accept]
