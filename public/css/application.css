@@ -9,4 +9,19 @@
   text-align: center;
 }
 
+.pull-right{
+  float: right;
+}
 
+.message-item li{
+  margin-bottom: 20px !important;
+}
+
+.message-item li:hover{
+  background-color: #F8F8F8;
+}
+
+.message-item a{
+  color: black;
+  text-decoration: none;
+}
