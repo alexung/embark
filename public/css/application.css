@@ -30,7 +30,18 @@ body{
   text-decoration: none;
 }
 
+<<<<<<< HEAD
 .trip-message-header{
   color: #B1D4EE !important;
 }
 
+=======
+.homepage-title {
+  font-family: 'Amatic SC', cursive;
+}
+
+h1.homepage-title {
+  font-size: 100px;
+  font-weight: bold;
+}
+>>>>>>> 2df9a2606ecbbb8aa1c9bee805a4428e14de133e
