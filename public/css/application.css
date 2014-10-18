@@ -1,3 +1,7 @@
+body{
+
+}
+
 .jumbotron{
   background-image: url("http://dhibzx39h851h.cloudfront.net/cache/ac68ce0113251c244db6e0c5b7388b3c788525d7/2/images/burst_homepage_bg.png");
   background-color: #0d77b6;
@@ -26,6 +30,12 @@
   text-decoration: none;
 }
 
+<<<<<<< HEAD
+.trip-message-header{
+  color: #B1D4EE !important;
+}
+
+=======
 .homepage-title {
   font-family: 'Amatic SC', cursive;
 }
@@ -34,3 +44,4 @@ h1.homepage-title {
   font-size: 100px;
   font-weight: bold;
 }
+>>>>>>> 2df9a2606ecbbb8aa1c9bee805a4428e14de133e
