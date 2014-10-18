@@ -23,3 +23,4 @@ post '/message/:id' do
   else
     redirect '/ride'
   end
+end
