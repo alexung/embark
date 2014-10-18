@@ -2,6 +2,6 @@
 
 <% @all_requests.each do |request| %>
   <a href="/message/<%=request[1].id%>">
-    <p><%= request[2].name %> has sent you a request for your ride from <%= request[0].origin%> to <%= request[0].destination%> on <%= request[0].start_time%></p>
+    <p><%= request[2].name %> has sent you a request for your ride from <%= request[0].origin%> to <%= request[0].destination%> on <%= request[0].start_time.strftime("%h %d %Y at %I:00 %P") %></p>
   </a>
 <% end %>

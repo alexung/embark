@@ -1,6 +1,6 @@
 <h1> Individual Message </h1>
 
-<p> <%= @requestor %> would like to request a ride from <%= @requested_info.origin %> to <%= @requested_info.destination %> on <%= @requested_info.start_time %>.  You currently have <%= @requested_info.seat_openings %> seats open. </p>
+<p> <%= @requestor %> would like to request a ride from <strong><%= @requested_info.origin %></strong> to <strong><%= @requested_info.destination %></strong> on <%= @requested_info.start_time.strftime("%h %d %Y at %I:00 %P")%>.  You currently have <%= @requested_info.seat_openings %> seats open. </p>
 
 <!-- Can include price? They're willing to pay $<%#= "#{@requested_info.price.to_s[0..-3]}.#{@requested_info.price.to_s[-2..-1]}" %>. -->
 
