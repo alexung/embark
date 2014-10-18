@@ -43,3 +43,15 @@ get '/message/:id' do
   # @user = User.find(session[:user_id])
   erb :individual_message
 end
+
+post '/message/:id' do
+  passenger_request = Request.find(params[:id])
+  requestor = passenger_request.requestor
+  if params[:accept]
+    PassengerRide.create(passenger: requestor, accepted_ride: passenger_request.requested_ride)
+    redirect '/ride'
+  else
+    redirect '/ride'
+  end
+
+end
