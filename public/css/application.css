@@ -1,18 +1,10 @@
-.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+.jumbotron{
+  background-image: url("http://dhibzx39h851h.cloudfront.net/cache/ac68ce0113251c244db6e0c5b7388b3c788525d7/2/images/burst_homepage_bg.png");
+  background-color: #0d77b6;
+  background-repeat: none;
+  background-position: center;
 }
-th {
-  text-align: left;
-}
-.directions-card {
-  color: #5B5B5B;
-  font-family: Roboto,Arial;
-  background-color: white;
-  -moz-user-select: text;
-  -webkit-user-select: text;
-  -ms-user-select: text;
-  display: none;
+
+.ride-tile{
+  text-align: center;
 }

@@ -1,14 +1,35 @@
-<h1>Ride homepage</h1>
-
-<% @rides.each do |ride| %>
-  <a href="/ride/<%= ride.id%>">
-    From: <%= ride.origin %><br>
-    To: <%= ride.destination %><br>
-    Seat Openings: <%= ride.seat_openings %><br>
-    Time Taking Off: <%= ride.start_time.strftime("%h %d %Y at %I:00 %P") %><br>
-    Price: $<%= "#{ride.price.to_s[0..-3]}.#{ride.price.to_s[-2..-1]}" %><br><br>
-  </a>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-6">
+      <center><h1>Ride homepage</h1></center>
+    </div>
+    <div class="col-sm-3">
+    </div>
+  </div>
+  <% top_counter = 1 %>
+  <% bottom_counter = 3 %>
+  <% @rides.each_with_index do |ride, index| %>
+  <% if (index+1) == top_counter %>
+  <% top_counter += 3 %>
+  <div class="row">
+    <% end %>
+    <div class="col-sm-4 ride-tile">
+      <div class="list-group">
+        <a href="/ride/<%= ride.id%>" class="list-group-item">
+          <h4 class="list-group-item-heading"><%= ride.origin %> to <%= ride.destination %></h4>
+          <p class="list-group-item-text">Seat Openings: <%= ride.seat_openings %></p>
+          <p class="list-group-item-text">Price: $<%= "#{ride.price.to_s[0..-3]}.#{ride.price.to_s[-2..-1]}" %></p>
+        </a>
+      </div>
+    </div>
+    <% if (index+1) == bottom_counter %>
+    <% bottom_counter += 3 %>
+  </div>
+  <% end %>
+  <% end %>
+</div>
 
 
 
