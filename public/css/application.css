@@ -25,3 +25,12 @@
   color: black;
   text-decoration: none;
 }
+
+.homepage-title {
+  font-family: 'Amatic SC', cursive;
+}
+
+h1.homepage-title {
+  font-size: 100px;
+  font-weight: bold;
+}
