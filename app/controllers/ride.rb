@@ -5,6 +5,7 @@ end
 
 get '/message' do
   @all_requests = get_requests_for_driver(session[:user_id]);
+
   erb :message
 end
 
@@ -27,21 +28,18 @@ post '/ride/success' do
   redirect '/ride/success'
 end
 
-get '/message/:id' do
-  @request = Request.find(params[:id])
-  erb :individual_message
-end
-
 get '/ride/:id' do
   @ride = Ride.find(params[:id])
   erb :ride
 end
 
-
-
-
-
-
-
-
-
+get '/message/:id' do
+  # binding.pry
+  @requested_route = Request.find(params[:id].to_i)
+  # binding.pry
+  p "*"*30
+  p params[:id].to_i #=> 6
+  p "*"*30
+  # @user = User.find(session[:user_id])
+  erb :individual_message
+end
