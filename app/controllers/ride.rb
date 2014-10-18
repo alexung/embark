@@ -48,7 +48,9 @@ post '/message/:id' do
   passenger_request = Request.find(params[:id])
   requestor = passenger_request.requestor
   if params[:accept]
+    ride = Ride.find(passenger_request.requested_ride)
     PassengerRide.create(passenger: requestor, accepted_ride: passenger_request.requested_ride)
+    ride.remove_seat
     redirect '/ride'
   else
     redirect '/ride'
