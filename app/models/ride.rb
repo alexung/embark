@@ -6,4 +6,9 @@ class Ride < ActiveRecord::Base
 
   has_many :requests, foreign_key: :requested_ride_id
   has_many :requestors, through: :requests
+
+  def remove_seat
+    seat_count = self.seat_openings
+    self.update(seat_openings: seat_count - 1)
+  end
 end
