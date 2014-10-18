@@ -17,4 +17,8 @@ helpers do
     requests
   end
 
+  def individual_request_for_driver(driver_id, ride_id)
+    Ride.find(User.find(driver_id).driver_rides.find(ride_id))
+  end
+
 end
