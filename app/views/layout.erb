@@ -19,6 +19,7 @@
 <body>
   <header>
     <% if session[:user_id] %>
+    Hello, <%= User.find(session[:user_id]).name %>
      <a href="/ride">Home</a>
      <a href="/ride/new">Post a ride</a>
      <a href="/message">Messages</a>
