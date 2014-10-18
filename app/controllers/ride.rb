@@ -31,6 +31,8 @@ end
 
 get '/ride/:id' do
   @ride = Ride.find(params[:id])
+  @driver = User.find(@ride.driver_id)
+  @driver_rides_count = @driver.driver_rides.count
   erb :ride
 end
 
