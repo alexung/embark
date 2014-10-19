@@ -15,6 +15,7 @@ gem 'activerecord', '~>4.1'
 
 gem 'rake'
 gem 'pry'
+gem 'unicorn'
 
 gem 'shotgun'
 gem 'bcrypt'
