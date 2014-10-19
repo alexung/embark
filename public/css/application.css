@@ -1,7 +1,3 @@
-body{
-
-}
-
 .jumbotron{
   background-image: url("http://dhibzx39h851h.cloudfront.net/cache/ac68ce0113251c244db6e0c5b7388b3c788525d7/2/images/burst_homepage_bg.png");
   background-color: #0d77b6;
@@ -30,6 +26,7 @@ body{
   color: black;
   text-decoration: none;
 }
+
 
 .trip-message-header{
   color: #B1D4EE !important;

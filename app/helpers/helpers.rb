@@ -8,13 +8,25 @@ helpers do
   end
 
   def get_requests_for_driver(driver_id)
-    requests = []
+    # requests = []
+
+    # all_trips = User.find(driver_id).driver_rides.map { |trip| trip[0] }
+    # array_of_hashes = []
+    hash_of_requests_for_trip = {}
     User.find(driver_id).driver_rides.each do |trip|
+      arr = []
       trip.requests.each do |request|
-        requests.push([trip, request, User.find(request.requestor)])
+        arr.push([request,User.find(request.requestor)])
       end
+      hash_of_requests_for_trip[trip] = arr
     end
-    requests
+
+    # User.find(driver_id).driver_rides.each do |trip|
+    #   trip.requests.each do |request|
+    #     requests.push([trip, request, User.find(request.requestor)])
+    #   end
+    # end
+    hash_of_requests_for_trip
   end
 
   def individual_request_for_driver(driver_id, ride_id)

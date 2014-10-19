@@ -1,5 +1,6 @@
 get '/message' do
   @all_requests = get_requests_for_driver(session[:user_id])
+  @driver = User.find(session[:user_id])
   erb :message
 end
 
