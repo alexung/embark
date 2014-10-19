@@ -1,29 +1,17 @@
-<div class="jumbotron">
-  <div class="container">
-    <h1 class="homepage-title">Embark</h1>
-      <p>Start your journey</p>
-      <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
-  </div>
-</div>
+<!-- <video autoplay loop>
+  <source src="/assets/videos/shapes.mp4" type="video/mp4"></source>
+</video> -->
+<script>
+  $('.navbar').hide()
+</script>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8">
-      <h4>Recent Rides</h4>
-      <ul class="list-group">
-        <%@recent_rides.each do |ride|%>
-        <li class="list-group-item"><strong><%=ride.origin%></strong> >> <strong><%=ride.destination%></strong> <span class="badge pull-right"><%=ride.seat_openings%> seats open</span></li>
-        <%end%>
-      </ul>
-    </div>
-    <div class="col-sm-4">
-      <h4>Top Destination</h4>
-      <div class="thumbnail">
-        <img src="http://s3.amazonaws.com/zim-prod-static/images/location_photos/la_square.jpg" alt="...">
-        <div class="caption">
-          <p>Los Angeles</p>
-        </div>
-      </div>
-    </div>
+<div>
+  <video class="homepage-video" width="105%" height="105%" autoplay loop muted>
+    <source src="/driving.mp4" type="video/mp4"></source>
+  </video>
+  <div class="container splash-title">
+    <h1 class="homepage-title">E M B A R K</h1>
+    <a href="/session" class="login-btn">Login</a><br><br><br>
+    <a href="/user" class="signup-btn">Create User</a>
   </div>
 </div>

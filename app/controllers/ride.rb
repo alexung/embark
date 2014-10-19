@@ -1,3 +1,7 @@
+get '/testvideo' do
+  erb :testvideo
+end
+
 get "/ride" do
   @rides = Ride.all
   erb :ride_homepage
